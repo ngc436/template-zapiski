@@ -1,13 +1,6 @@
-% Версия от 06.04.11
-%
-
-%
-% Изменяем spmj-l.cls для нужд Записок
-%
 \NeedsTeXFormat{LaTeX2e}% LaTeX 2.09 can't be used (nor non-LaTeX)
 [1994/12/01]% LaTeX date must December 1994 or later
-\ProvidesClass{zapiski}
-              [2011/04/06 v1.0 Zapiski nauchnykh seminarov POMI Author Class]
+\ProvidesClass{zapiski}[2011/04/06 v1.0 Zapiski nauchnykh seminarov POMI Author Class]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{amsart}}
 \ProcessOptions
@@ -17,7 +10,7 @@
 \RequirePackage{textcomp}
 % для рисования правильного значка параграфа
 
-% Команда, которая устанавливает параматры для печати англоязычной статьи
+% Команда, которая устанавливает параметры для печати англоязычной статьи
 \def\english{
 \righthyphenmin=3
 \def\prefacename{Preface}
@@ -86,7 +79,7 @@
 % Размеры страницы. Уточнить!!!
 
 \textwidth=113mm
-\textheight=178mm 
+\textheight=178mm
 \addtolength{\textheight}{-\topmargin}
 \addtolength{\textheight}{-\headheight}
 \addtolength{\textheight}{-\headsep}
@@ -98,9 +91,8 @@
 % Так мы вставляем дату
 
 \renewcommand{\datename}{Поступило}
-%\def\@setdate{\flushright{\footnotesize\upshape\datename\enskip\@date}}
-\def\@setdate{\vspace*{-\baselineskip}\vbox to -\baselineskip{\flushright{%\footnotesize
-{\footnotesize\rmfamily\datename\enskip\@date}}}}
+\def\@setdate{\flushright{\footnotesize\upshape\datename\enskip\@date}}
+%\def\@setdate{\vspace*{-\baselineskip}\vbox to -\baselineskip{\flushright{\footnotesize\rmfamily\datename\enskip\@date}}}
 
 %
 % Модифицируем куски amsart
@@ -110,7 +102,7 @@
 \let\@engauthors=\@empty
 \let\@engtitle=\@empty
 %
-% Это нужно для перевода авторов и названия, а также запихивания abstract'а в 
+% Это нужно для перевода авторов и названия, а также запихивания abstract'а в
 % конец статьи
 
 \def\@setaddresses{\par
@@ -167,7 +159,7 @@
 
 %%%%%%%%%%
 
-% Заводим команды \engtitle и \engauthors для написания перевода названия и 
+% Заводим команды \engtitle и \engauthors для написания перевода названия и
 % фамилий авторов, помещаемые в конце статьи
 
 \newcommand*{\engtitle}[1]{\gdef\@engtitle{#1}}
@@ -186,7 +178,7 @@
 }
 
 %
-% Коллекционируем авторов глобально команду менять не пришлось, 
+% Коллекционируем авторов глобально команду менять не пришлось,
 % поменяли только союз
 %
 
@@ -211,7 +203,7 @@
 \def\@setauthors{%
   \begingroup
   \trivlist
-  %\centering\footnotesize 
+  %\centering\footnotesize
   \@topsep30\p@\relax
   \advance\@topsep by -\baselineskip
   \item\relax
@@ -238,10 +230,10 @@
 
 % рисуем черту под колонтитулом
 % идеология с линейкой Львовского
-% шрифт получается на пункт меньше и ничего с этим разумными средствами 
-% пока не поделать, поэтому мы локально подставляем в scriptsize нужный 
+% шрифт получается на пункт меньше и ничего с этим разумными средствами
+% пока не поделать, поэтому мы локально подставляем в scriptsize нужный
 % нам шрифт
- 
+
 \def\ch@ngefonts{\let\tempfont=\scriptsize \let\scriptsize=\footnotesize}
 \def\Ch@ngefonts{\let\scriptsize=\tempfont}
 \let\@@evenhead=\@evenhead
@@ -252,7 +244,7 @@
 {\ch@ngefonts\vbox{\hbox to\textwidth{\strut \@@oddhead}\Ch@ngefonts\hrule}}}
 
 
-% Определяем выпуск, том месяц и т.п. 
+% Определяем выпуск, том месяц и т.п.
 % Именно так для согласования с английской версией SPbMJ и Plenum'ом
 \def\originfo#1#2#3#4{\def\origvolume{#1}\def\origissue{#2}%
   \def\origmonth{#3}\def\origyear{#4}}
@@ -279,18 +271,18 @@
 
 %    Определяем логотип
 \def\publnamef{%
-  \hbox{Çàïèñêè íàó÷íûõ}}
+  \hbox{Записки научных}}
 \def\publnames{%
-  \hbox{ñåìèíàðîâ ÏÎÌÈ}}
+  \hbox{семинаров ПОМИ}}
 \def\russianvolinfo{%
-  \hbox{Òîì \origvolume, \origyear\ ã.}}
+  \hbox{Том \origvolume, \origyear\ г.}}
 \AtBeginDocument{%
   \def\@serieslogo{%
     \vbox to\headheight{%
       \parindent\z@ \parfillskip\z@ \fontsize{8}{8\p@}\selectfont
       \noindent\hbox{\vbox{\hfill\publnamef\linebreak\indent\hfill\publnames
       \linebreak\indent\hfill\russianvolinfo}}\linebreak
-      \null\hfill 
+      \null\hfill
       \endgraf
       \vss
     }%
@@ -324,7 +316,7 @@
       \global\dimen@i\prevdepth}\prevdepth\dimen@i
   \fi
   \mycontentslabel
-% вставляем вспомогательную строчку в aux-файл для удобства создания 
+% вставляем вспомогательную строчку в aux-файл для удобства создания
 % оглавления
   \if@titlepage
     \newpage
@@ -341,7 +333,7 @@
  \else
    \skip@8\p@ \advance\skip@-\lastskip
 % Я бы сделал вертикальный отступ побольше
-%   \advance\skip@-\baselineskip 
+%   \advance\skip@-\baselineskip
    \vskip\skip@
    \unvbox\abstractbox
    \prevdepth\z@ % because \abstractbox is a vtop
@@ -432,7 +424,7 @@
    \indentlabel{\@ifnotempty{#2}{\ignorespaces#1 \S#2.\quad}}#3}
 % Если не надо всюду ставить значки параграфов, то можно закомментировать
 % и просто пользуемся amsart'овским
-% Обсудить с С.В. 
+% Обсудить с С.В.
 
 %  Subsection numbers bold.
 \def\@secnumfont{%
@@ -470,18 +462,12 @@
 \def\contentsname{Оглавление}
 \def\figurename{Рис.}
 \def\partname{Часть}
-%\def\listfigurename{Ñïèñîê ðèñóíêîâ}
-%\def\listtablename{Ñïèñîê òàáëèö}
 \def\refname{Литература}
-% Ïðÿìî çäåñü ìîæíî ìåíÿòü øðèôò
 \def\bibname{Литература}
-%\def\indexname{Ïðåäìåòíûé óêàçàòåëü}
 \def\tablename{Таблица}
-%\def\abstractname{Àííîòàöèÿ}
 \@ifundefined{chapter}{}{\def\chaptername{Глава}}
 \def\proofname{Доказательство}
 \def\appendixname{Приложение}
-%\def\prefacename{Ïðåäèñëîâèå}
 \def\keywordsname{Ключевые слова}
 
 
@@ -509,53 +495,4 @@
 \chardef\rrq=129
 
 \endinput
-
-%%%%%%%%%%%%%
-%
-% С указателем разберемся потом, если он кому-нибудь нужен
-%
-
-\def\ukazatel{%
-\def\ips{20mm}
-\def\ps{10mm}
-\frenchspacing
-\rightskip=\ips
-\parindent=0pt
-\parfillskip=-\ips
-% Команда, рисующая полужирным шрифтом авторов, обычным название, дальше
-% \dotfill, затем номер журнала и страницы
-\gdef\CONT##1##2##3##4{\hangindent=8mm{\bfseries\ignorespaces##1\unskip}
- {\mdseries\quad\ignorespaces##2\unskip}
- \dotfill\hbox to \ips{\hfil\itshape\ignorespaces##3\unskip\upshape,
-  \hbox to \ps{\hfil\ignorespaces##4\unskip}}\par}
-% упрощенная версия для ссылки типа
-% Иванов И. И., см. Иванов И. И., Петров П. П.
-\gdef\SCONT##1##2##3##4##5{\hangindent=8mm{\bfseries\ignorespaces##1,\unskip}
- {\mdseries\quad\ignorespaces ñì.~##2\unskip}
- \dotfill\hbox to \ips{\hfil\itshape\ignorespaces##4\unskip\upshape,
-  \hbox to \ps{\hfil\ignorespaces##5\unskip}}\par}
-%
-% Для ежегодного указателя все генерируется само, поэтому в начале 
-% документа нужно много всего добавить
-%
-\AtBeginDocument{%
-  \def\@serieslogo{%
-    \vbox to\headheight{%
-      \parindent\z@ \parfillskip\z@ \fontsize{8}{8\p@}\selectfont
-      \noindent\publname\linebreak
-      \russianvolinfo
-      \null\hfill 
-      \endgraf
-      \vss
-    }%
-  }%
-\nocontents
-\title[Именной указатель]%
-{Именной указатель журнала \\ \llq Алгебра и анализ\rrq \\ 
-$\text{ò.~\origvolume, \origyear~ã.}$}
-\maketitle
-\vbox to-1pc{\rightline{\upshape\No\hbox to\ps{\hfil с.}}\vss}
 }
-}
-
-
