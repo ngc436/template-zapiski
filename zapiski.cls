@@ -1,8 +1,8 @@
-% Версия от 06.04.11
+% Р’РµСЂСЃРёСЏ РѕС‚ 06.04.11
 %
 
 %
-% Изменяем spmj-l.cls для нужд Записок
+% РР·РјРµРЅСЏРµРј spmj-l.cls РґР»СЏ РЅСѓР¶Рґ Р—Р°РїРёСЃРѕРє
 %
 \NeedsTeXFormat{LaTeX2e}% LaTeX 2.09 can't be used (nor non-LaTeX)
 [1994/12/01]% LaTeX date must December 1994 or later
@@ -15,9 +15,9 @@
 \LoadClass[reqno]{amsart}[2009/07/02]
 
 \RequirePackage{textcomp}
-% для рисования правильного значка параграфа
+% РґР»СЏ СЂРёСЃРѕРІР°РЅРёСЏ РїСЂР°РІРёР»СЊРЅРѕРіРѕ Р·РЅР°С‡РєР° РїР°СЂР°РіСЂР°С„Р°
 
-% Команда, которая устанавливает параматры для печати англоязычной статьи
+% РљРѕРјР°РЅРґР°, РєРѕС‚РѕСЂР°СЏ СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РїР°СЂР°РјР°С‚СЂС‹ РґР»СЏ РїРµС‡Р°С‚Рё Р°РЅРіР»РѕСЏР·С‹С‡РЅРѕР№ СЃС‚Р°С‚СЊРё
 \def\english{
 \righthyphenmin=3
 \def\prefacename{Preface}
@@ -37,9 +37,9 @@
 \@ifundefined{chapter}{}{\def\chaptername{Chapter}}
 \def\keywordsname{Key words and phrases}
 
-% Abstract в статье по-английски вставляется также как и в "Алгебре и анализе"
-% Оттуда и позаимствовали команды
-% Обнуляем две команды, чтобы не вставляли название по-английски в конце статьи
+% Abstract РІ СЃС‚Р°С‚СЊРµ РїРѕ-Р°РЅРіР»РёР№СЃРєРё РІСЃС‚Р°РІР»СЏРµС‚СЃСЏ С‚Р°РєР¶Рµ РєР°Рє Рё РІ "РђР»РіРµР±СЂРµ Рё Р°РЅР°Р»РёР·Рµ"
+% РћС‚С‚СѓРґР° Рё РїРѕР·Р°РёРјСЃС‚РІРѕРІР°Р»Рё РєРѕРјР°РЅРґС‹
+% РћР±РЅСѓР»СЏРµРј РґРІРµ РєРѕРјР°РЅРґС‹, С‡С‚РѕР±С‹ РЅРµ РІСЃС‚Р°РІР»СЏР»Рё РЅР°Р·РІР°РЅРёРµ РїРѕ-Р°РЅРіР»РёР№СЃРєРё РІ РєРѕРЅС†Рµ СЃС‚Р°С‚СЊРё
 \def\engauthors##1{}
 \def\engtitle##1{}
 
@@ -74,16 +74,16 @@
   \ifx\@setabstract\relax \@setabstracta \fi
 }
 
-} % Закрывающаяся скобка от английских определений
+} % Р—Р°РєСЂС‹РІР°СЋС‰Р°СЏСЃСЏ СЃРєРѕР±РєР° РѕС‚ Р°РЅРіР»РёР№СЃРєРёС… РѕРїСЂРµРґРµР»РµРЅРёР№
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Стилевые параметры русского языка
+% РЎС‚РёР»РµРІС‹Рµ РїР°СЂР°РјРµС‚СЂС‹ СЂСѓСЃСЃРєРѕРіРѕ СЏР·С‹РєР°
 
 \frenchspacing
 \righthyphenmin 2
 
-% Размеры страницы. Уточнить!!!
+% Р Р°Р·РјРµСЂС‹ СЃС‚СЂР°РЅРёС†С‹. РЈС‚РѕС‡РЅРёС‚СЊ!!!
 
 \textwidth=113mm
 \textheight=178mm 
@@ -91,39 +91,39 @@
 \addtolength{\textheight}{-\headheight}
 \addtolength{\textheight}{-\headsep}
 \footskip=18pt
-% 178mm было вместе с колонтитулом
-%\calclayout % Что это?
+% 178mm Р±С‹Р»Рѕ РІРјРµСЃС‚Рµ СЃ РєРѕР»РѕРЅС‚РёС‚СѓР»РѕРј
+%\calclayout % Р§С‚Рѕ СЌС‚Рѕ?
 
 
-% Так мы вставляем дату
+% РўР°Рє РјС‹ РІСЃС‚Р°РІР»СЏРµРј РґР°С‚Сѓ
 
-\renewcommand{\datename}{Поступило}
+\renewcommand{\datename}{РџРѕСЃС‚СѓРїРёР»Рѕ}
 %\def\@setdate{\flushright{\footnotesize\upshape\datename\enskip\@date}}
 \def\@setdate{\vspace*{-\baselineskip}\vbox to -\baselineskip{\flushright{%\footnotesize
 {\footnotesize\rmfamily\datename\enskip\@date}}}}
 
 %
-% Модифицируем куски amsart
+% РњРѕРґРёС„РёС†РёСЂСѓРµРј РєСѓСЃРєРё amsart
 %
 
 \def\@setabstracta{\relax}
 \let\@engauthors=\@empty
 \let\@engtitle=\@empty
 %
-% Это нужно для перевода авторов и названия, а также запихивания abstract'а
-% в конец статьи
+% Р­С‚Рѕ РЅСѓР¶РЅРѕ РґР»СЏ РїРµСЂРµРІРѕРґР° Р°РІС‚РѕСЂРѕРІ Рё РЅР°Р·РІР°РЅРёСЏ, Р° С‚Р°РєР¶Рµ Р·Р°РїРёС…РёРІР°РЅРёСЏ abstract'Р° РІ 
+% РєРѕРЅРµС† СЃС‚Р°С‚СЊРё
 
 \def\@setaddresses{\par
   \nobreak \begingroup
 \footnotesize
   \def\author##1{\addvspace\bigskipamount}%
 %  \def\\{\unskip, \ignorespaces}%
-% У нас принято ручное форматирование
+% РЈ РЅР°СЃ РїСЂРёРЅСЏС‚Рѕ СЂСѓС‡РЅРѕРµ С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ
   \interlinepenalty\@M
   \def\address##1##2{\begingroup
 %    \par\addvspace\bigskipamount\indent
     \par\addvspace\bigskipamount
-% Отступ мы не делаем
+% РћС‚СЃС‚СѓРї РјС‹ РЅРµ РґРµР»Р°РµРј
     \@ifnotempty{##1}{(\ignorespaces##1\unskip) }%
 %    {\scshape\ignorespaces##2}\par\endgroup}%
     {\noindent\ignorespaces\normalfont\rmfamily##2}\par\endgroup}%
@@ -132,17 +132,17 @@
 %    \@ifnotempty{##2}{\nobreak\indent{\itshape Current address}%
 %      \@ifnotempty{##1}{, \ignorespaces##1\unskip}\/:\space
 %      ##2\par}\endgroup}%
-% А нужно ли нам такое? Уточнить!!!
+% Рђ РЅСѓР¶РЅРѕ Р»Рё РЅР°Рј С‚Р°РєРѕРµ? РЈС‚РѕС‡РЅРёС‚СЊ!!!
   \def\email##1##2{\nobreak\addvspace\smallskipamount\begingroup
     \@ifnotempty{##2}{\nobreak\noindent{\itshape E-mail}\/:%
       \@ifnotempty{##1}{, \ignorespaces##1\unskip}\/\space
       \footnotesize\ttfamily##2\par}\endgroup}%
-% У нас помельче и пробелов поменьше, отступ отсутствует
+% РЈ РЅР°СЃ РїРѕРјРµР»СЊС‡Рµ Рё РїСЂРѕР±РµР»РѕРІ РїРѕРјРµРЅСЊС€Рµ, РѕС‚СЃС‚СѓРї РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚
   \def\urladdr##1##2{\begingroup
     \@ifnotempty{##2}{\nobreak\indent{\itshape URL}%
       \@ifnotempty{##1}{, \ignorespaces##1\unskip}\/:\space
       \ttfamily##2\par}\endgroup}%
-% URL пока не адаптировали. А надо ли? Как именно у нас их пишут? Уточнить!!!
+% URL РїРѕРєР° РЅРµ Р°РґР°РїС‚РёСЂРѕРІР°Р»Рё. Рђ РЅР°РґРѕ Р»Рё? РљР°Рє РёРјРµРЅРЅРѕ Сѓ РЅР°СЃ РёС… РїРёС€СѓС‚? РЈС‚РѕС‡РЅРёС‚СЊ!!!
   \addresses
   \endgroup
 }
@@ -151,7 +151,7 @@
 % %%%%%
 %
 
-% Док-во пишем жирным шрифтом
+% Р”РѕРє-РІРѕ РїРёС€РµРј Р¶РёСЂРЅС‹Рј С€СЂРёС„С‚РѕРј
 
 \renewenvironment{proof}[1][\proofname]{\par
   \pushQED{\qed}%
@@ -159,7 +159,7 @@
   \trivlist
   \item[\hskip\labelsep
         \bfseries
-% было  \itshape
+% Р±С‹Р»Рѕ \itshape
     #1\@addpunct{.}]\ignorespaces
 }{%
   \popQED\endtrivlist\@endpefalse
@@ -167,15 +167,15 @@
 
 %%%%%%%%%%
 
-% Заводим команды \engtitle и \engauthors для написания перевода названия 
-% и фамилий авторов, помещаемые в конце статьи
+% Р—Р°РІРѕРґРёРј РєРѕРјР°РЅРґС‹ \engtitle Рё \engauthors РґР»СЏ РЅР°РїРёСЃР°РЅРёСЏ РїРµСЂРµРІРѕРґР° РЅР°Р·РІР°РЅРёСЏ Рё 
+% С„Р°РјРёР»РёР№ Р°РІС‚РѕСЂРѕРІ, РїРѕРјРµС‰Р°РµРјС‹Рµ РІ РєРѕРЅС†Рµ СЃС‚Р°С‚СЊРё
 
 \newcommand*{\engtitle}[1]{\gdef\@engtitle{#1}}
 \newcommand*{\engauthors}[1]{\gdef\@engauthors{#1}}
 
-% Разбираемся с абстрактом
-% В русском мы пишем его в конце статьи, безо всяких премудростей
-% в английском сразу после заголовка, т.е. как в amsart'е
+% Р Р°Р·Р±РёСЂР°РµРјСЃСЏ СЃ Р°Р±СЃС‚СЂР°РєС‚РѕРј
+% Р’ СЂСѓСЃСЃРєРѕРј РјС‹ РїРёС€РµРј РµРіРѕ РІ РєРѕРЅС†Рµ СЃС‚Р°С‚СЊРё, Р±РµР·Рѕ РІСЃСЏРєРёС… РїСЂРµРјСѓРґСЂРѕСЃС‚РµР№
+% РІ Р°РЅРіР»РёР№СЃРєРѕРј СЃСЂР°Р·Сѓ РїРѕСЃР»Рµ Р·Р°РіРѕР»РѕРІРєР°, С‚.Рµ. РєР°Рє РІ amsart'Рµ
 
 \renewenvironment{abstract}{%
   \global\setbox\abstractbox=\vtop \bgroup
@@ -186,21 +186,21 @@
 }
 
 %
-% Коллекционируем авторов глобально команду менять не пришлось, 
-% поменяли только союз
+% РљРѕР»Р»РµРєС†РёРѕРЅРёСЂСѓРµРј Р°РІС‚РѕСЂРѕРІ РіР»РѕР±Р°Р»СЊРЅРѕ РєРѕРјР°РЅРґСѓ РјРµРЅСЏС‚СЊ РЅРµ РїСЂРёС€Р»РѕСЃСЊ, 
+% РїРѕРјРµРЅСЏР»Рё С‚РѕР»СЊРєРѕ СЃРѕСЋР·
 %
 
 \renewcommand{\andify}{%
-%  \nxandlist{\unskip, }{\unskip{} и~}{\unskip{} и~}}
+%  \nxandlist{\unskip, }{\unskip{} ГЁ~}{\unskip{} ГЁ~}}
   \nxandlist{\unskip, }{\unskip, }{\unskip, }}
-% по последним данным "и" не пишем
+% РїРѕ РїРѕСЃР»РµРґРЅРёРј РґР°РЅРЅС‹Рј "Рё" РЅРµ РїРёС€РµРј
 
 %
-% А печатаем мы их жирным шрифтом и прижимаем влево
-% Также как и заголовок
+% Рђ РїРµС‡Р°С‚Р°РµРј РјС‹ РёС… Р¶РёСЂРЅС‹Рј С€СЂРёС„С‚РѕРј Рё РїСЂРёР¶РёРјР°РµРј РІР»РµРІРѕ
+% РўР°РєР¶Рµ РєР°Рє Рё Р·Р°РіРѕР»РѕРІРѕРє
 
-% Для этого заводим специальное окружение flushleftquote
-% и переделываем обе выводящие команды
+% Р”Р»СЏ СЌС‚РѕРіРѕ Р·Р°РІРѕРґРёРј СЃРїРµС†РёР°Р»СЊРЅРѕРµ РѕРєСЂСѓР¶РµРЅРёРµ flushleftquote
+% Рё РїРµСЂРµРґРµР»С‹РІР°РµРј РѕР±Рµ РІС‹РІРѕРґСЏС‰РёРµ РєРѕРјР°РЅРґС‹
 
 \newenvironment{flushleftquote}{%
   \list{}{\leftmargin12pt\raggedright}\item[]%
@@ -232,15 +232,15 @@
   \end{flushleftquote}%
 }
 
-% AMSовский копирайт не пишем
+% AMSРѕРІСЃРєРёР№ РєРѕРїРёСЂР°Р№С‚ РЅРµ РїРёС€РµРј
 
 \def\@setcopyright{}
 
-% рисуем черту под колонтитулом
-% идеология с линейкой Львовского
-% шрифт получается на пункт меньше и ничего с этим разумными средствами 
-% пока не поделать, поэтому мы локально подставляем в scriptsize нужный 
-% нам шрифт
+% СЂРёСЃСѓРµРј С‡РµСЂС‚Сѓ РїРѕРґ РєРѕР»РѕРЅС‚РёС‚СѓР»РѕРј
+% РёРґРµРѕР»РѕРіРёСЏ СЃ Р»РёРЅРµР№РєРѕР№ Р›СЊРІРѕРІСЃРєРѕРіРѕ
+% С€СЂРёС„С‚ РїРѕР»СѓС‡Р°РµС‚СЃСЏ РЅР° РїСѓРЅРєС‚ РјРµРЅСЊС€Рµ Рё РЅРёС‡РµРіРѕ СЃ СЌС‚РёРј СЂР°Р·СѓРјРЅС‹РјРё СЃСЂРµРґСЃС‚РІР°РјРё 
+% РїРѕРєР° РЅРµ РїРѕРґРµР»Р°С‚СЊ, РїРѕСЌС‚РѕРјСѓ РјС‹ Р»РѕРєР°Р»СЊРЅРѕ РїРѕРґСЃС‚Р°РІР»СЏРµРј РІ scriptsize РЅСѓР¶РЅС‹Р№ 
+% РЅР°Рј С€СЂРёС„С‚
  
 \def\ch@ngefonts{\let\tempfont=\scriptsize \let\scriptsize=\footnotesize}
 \def\Ch@ngefonts{\let\scriptsize=\tempfont}
@@ -252,8 +252,8 @@
 {\ch@ngefonts\vbox{\hbox to\textwidth{\strut \@@oddhead}\Ch@ngefonts\hrule}}}
 
 
-% Определяем выпуск, том месяц и т.п. 
-% Именно так для согласования с английской версией SPbMJ и Plenum'ом
+% РћРїСЂРµРґРµР»СЏРµРј РІС‹РїСѓСЃРє, С‚РѕРј РјРµСЃСЏС† Рё С‚.Рї. 
+% РРјРµРЅРЅРѕ С‚Р°Рє РґР»СЏ СЃРѕРіР»Р°СЃРѕРІР°РЅРёСЏ СЃ Р°РЅРіР»РёР№СЃРєРѕР№ РІРµСЂСЃРёРµР№ SPbMJ Рё Plenum'РѕРј
 \def\originfo#1#2#3#4{\def\origvolume{#1}\def\origissue{#2}%
   \def\origmonth{#3}\def\origyear{#4}}
 \originfo{00}% volume number
@@ -270,20 +270,20 @@
   {Yyyy}%     % month
   {0000}%     % year
 
-% Определяем команду для УДК
-% Здесь не используется, только для согласования с Plenum'ом
+% РћРїСЂРµРґРµР»СЏРµРј РєРѕРјР°РЅРґСѓ РґР»СЏ РЈР”Рљ
+% Р—РґРµСЃСЊ РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ, С‚РѕР»СЊРєРѕ РґР»СЏ СЃРѕРіР»Р°СЃРѕРІР°РЅРёСЏ СЃ Plenum'РѕРј
 \def\UDC#1{\def\@UDC{#1}}
 \let\@UDC=\@empty
 \def\@setUDC{\ifx\@empty\@UDC\else{\bfseries UDC \@UDC}\fi}
 
 
-%    Определяем логотип
+%    РћРїСЂРµРґРµР»СЏРµРј Р»РѕРіРѕС‚РёРї
 \def\publnamef{%
-  \hbox{Записки научных}}
+  \hbox{Г‡Г ГЇГЁГ±ГЄГЁ Г­Г ГіГ·Г­Г»Гµ}}
 \def\publnames{%
-  \hbox{семинаров ПОМИ}}
+  \hbox{Г±ГҐГ¬ГЁГ­Г Г°Г®Гў ГЏГЋГЊГ€}}
 \def\russianvolinfo{%
-  \hbox{Том \origvolume, \origyear\ г.}}
+  \hbox{Г’Г®Г¬ \origvolume, \origyear\ ГЈ.}}
 \AtBeginDocument{%
   \def\@serieslogo{%
     \vbox to\headheight{%
@@ -297,35 +297,35 @@
   }%
 }
 
-% Переделываем maketitle
+% РџРµСЂРµРґРµР»С‹РІР°РµРј maketitle
 
 \def\@maketitle{%
   \normalfont\normalsize
   \let\@makefnmark\relax  \let\@thefnmark\relax
-%  \ifx\@empty\@subjclass\else \@footnotetext{\@setsubjclass}\fi %У нас такого нет
+%  \ifx\@empty\@subjclass\else \@footnotetext{\@setsubjclass}\fi %РЈ РЅР°СЃ С‚Р°РєРѕРіРѕ РЅРµС‚
   \ifx\@empty\@keywords\else \@footnotetext{\@setkeywords}\fi
   \ifx\@empty\thankses\else \@footnotetext{%
     \def\par{\let\par\@par}\@setthanks}\fi
 %%%%
   \@mkboth{\@nx{\shortauthors}}{\@nx\shorttitle}%
-% почему-то эта команда не работает, вероятно она замещается чем-то из amsart
+% РїРѕС‡РµРјСѓ-С‚Рѕ СЌС‚Р° РєРѕРјР°РЅРґР° РЅРµ СЂР°Р±РѕС‚Р°РµС‚, РІРµСЂРѕСЏС‚РЅРѕ РѕРЅР° Р·Р°РјРµС‰Р°РµС‚СЃСЏ С‡РµРј-С‚Рѕ РёР· amsart
   \global\topskip24\p@\relax % 5.5pc   "   "   "     "     "
   \ifx\@empty\authors \else \@setauthors \fi
   \@settitle
   \@setabstracta
   \normalsize
-% У нас посвящение после abstract'а
+% РЈ РЅР°СЃ РїРѕСЃРІСЏС‰РµРЅРёРµ РїРѕСЃР»Рµ abstract'Р°
   \ifx\@empty\@dedicatory
   \else
 %    \baselineskip18\p@
     \baselineskip14\p@
     \vtop{\flushright{\bfseries\@dedicatory\@@par}%
-% прижимаем вправо, полужирным шрифтом
+% РїСЂРёР¶РёРјР°РµРј РІРїСЂР°РІРѕ, РїРѕР»СѓР¶РёСЂРЅС‹Рј С€СЂРёС„С‚РѕРј
       \global\dimen@i\prevdepth}\prevdepth\dimen@i
   \fi
   \mycontentslabel
-% вставляем вспомогательную строчку в aux-файл для удобства создания 
-% оглавления
+% РІСЃС‚Р°РІР»СЏРµРј РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅСѓСЋ СЃС‚СЂРѕС‡РєСѓ РІ aux-С„Р°Р№Р» РґР»СЏ СѓРґРѕР±СЃС‚РІР° СЃРѕР·РґР°РЅРёСЏ 
+% РѕРіР»Р°РІР»РµРЅРёСЏ
   \if@titlepage
     \newpage
   \else
@@ -334,13 +334,13 @@
   \fi
 } % end \@maketitle
 
-% Запихиваем abstract в конец статьи
+% Р—Р°РїРёС…РёРІР°РµРј abstract РІ РєРѕРЅРµС† СЃС‚Р°С‚СЊРё
 
 \def\@setabstractb{%
  \ifvoid\abstractbox
  \else
    \skip@8\p@ \advance\skip@-\lastskip
-% Я бы сделал вертикальный отступ побольше
+% РЇ Р±С‹ СЃРґРµР»Р°Р» РІРµСЂС‚РёРєР°Р»СЊРЅС‹Р№ РѕС‚СЃС‚СѓРї РїРѕР±РѕР»СЊС€Рµ
 %   \advance\skip@-\baselineskip 
    \vskip\skip@
    \unvbox\abstractbox
@@ -348,14 +348,14 @@
  \fi
 }
 
-% У нас после "ключевых слов" двоеточие
+% РЈ РЅР°СЃ РїРѕСЃР»Рµ "РєР»СЋС‡РµРІС‹С… СЃР»РѕРІ" РґРІРѕРµС‚РѕС‡РёРµ
 
 \def\@setkeywords{%
   {\itshape \keywordsname}\/:\enspace \@keywords\@addpunct.}
 
-% Пошли всякие заголовки
+% РџРѕС€Р»Рё РІСЃСЏРєРёРµ Р·Р°РіРѕР»РѕРІРєРё
 
-% У нас large sf
+% РЈ РЅР°СЃ large sf
 
 \def\section{\@startsection{section}{1}%
   \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}%
@@ -366,16 +366,16 @@
 %  {\normalfont\centering}}
   {\normalfont\large\scshape\centering}}
 
-% Остальные оформим, когда узнаем как они выглядят
+% РћСЃС‚Р°Р»СЊРЅС‹Рµ РѕС„РѕСЂРјРёРј, РєРѕРіРґР° СѓР·РЅР°РµРј РєР°Рє РѕРЅРё РІС‹РіР»СЏРґСЏС‚
 
-% В списке литературы
-% Мы пока ограничимся заменой квадратных скобок на число с точкой, но может
-% сделаем общепринятый вариант? -- спросить С.В.
+% Р’ СЃРїРёСЃРєРµ Р»РёС‚РµСЂР°С‚СѓСЂС‹
+% РњС‹ РїРѕРєР° РѕРіСЂР°РЅРёС‡РёРјСЃСЏ Р·Р°РјРµРЅРѕР№ РєРІР°РґСЂР°С‚РЅС‹С… СЃРєРѕР±РѕРє РЅР° С‡РёСЃР»Рѕ СЃ С‚РѕС‡РєРѕР№, РЅРѕ РјРѕР¶РµС‚
+% СЃРґРµР»Р°РµРј РѕР±С‰РµРїСЂРёРЅСЏС‚С‹Р№ РІР°СЂРёР°РЅС‚? -- СЃРїСЂРѕСЃРёС‚СЊ РЎ.Р’.
 %
 \def\@biblabel#1{\@ifnotempty{#1}{#1.}}
 
 %
-% Здесь мы определяем то чем это все закончится
+% Р—РґРµСЃСЊ РјС‹ РѕРїСЂРµРґРµР»СЏРµРј С‚Рѕ С‡РµРј СЌС‚Рѕ РІСЃРµ Р·Р°РєРѕРЅС‡РёС‚СЃСЏ
 %
 \def\enddoc@text{%
   \ifx\@empty\@engauthors \else
@@ -386,7 +386,7 @@
   \ifx\@empty\addresses \else\@setaddresses\fi
 }
 
-% Взято из spmj-l
+% Р’Р·СЏС‚Рѕ РёР· spmj-l
 
 %    Miscellaneous information associated with translation.
 %    [bnb, 2003/06/03]
@@ -405,7 +405,7 @@
 \newcommand{\op}[1]{\translnote{Originally published in #1}}
 \newcommand{\eb}[1]{\translnote{Edited by \uppercase{#1}}}
 
-% У нас вообще такое возникает? !!!
+% РЈ РЅР°СЃ РІРѕРѕР±С‰Рµ С‚Р°РєРѕРµ РІРѕР·РЅРёРєР°РµС‚? !!!
 
 \def\@setengtitle{%
   \par\begingroup
@@ -414,7 +414,7 @@
     \@engauthors\ \@engtitle\par
   \endgroup}
 
-% Дописали перевод авторов и заголовка в конец статьи
+% Р”РѕРїРёСЃР°Р»Рё РїРµСЂРµРІРѕРґ Р°РІС‚РѕСЂРѕРІ Рё Р·Р°РіРѕР»РѕРІРєР° РІ РєРѕРЅРµС† СЃС‚Р°С‚СЊРё
 
 %  Various style differences between SPMJ and amsart.
 %  [bnb, 2004/12/14]
@@ -430,9 +430,9 @@
 
  \renewcommand{\tocsection}[3]{%
    \indentlabel{\@ifnotempty{#2}{\ignorespaces#1 \S#2.\quad}}#3}
-% Если не надо всюду ставить значки параграфов, то можно закомментировать
-% и просто пользуемся amsart'овским
-% Обсудить с С.В. 
+% Р•СЃР»Рё РЅРµ РЅР°РґРѕ РІСЃСЋРґСѓ СЃС‚Р°РІРёС‚СЊ Р·РЅР°С‡РєРё РїР°СЂР°РіСЂР°С„РѕРІ, С‚Рѕ РјРѕР¶РЅРѕ Р·Р°РєРѕРјРјРµРЅС‚РёСЂРѕРІР°С‚СЊ
+% Рё РїСЂРѕСЃС‚Рѕ РїРѕР»СЊР·СѓРµРјСЃСЏ amsart'РѕРІСЃРєРёРј
+% РћР±СЃСѓРґРёС‚СЊ СЃ РЎ.Р’. 
 
 %  Subsection numbers bold.
 \def\@secnumfont{%
@@ -443,7 +443,7 @@
   \addtocontents{#1}{\protect\contentsline{#2}{#3}{}}}
 
 %
-% полезные заимствования из russcorr
+% РїРѕР»РµР·РЅС‹Рµ Р·Р°РёРјСЃС‚РІРѕРІР°РЅРёСЏ РёР· russcorr
 %
 
 %\newcommand*{\tg}{\mathop{\operator@font tg}\nolimits}
@@ -467,31 +467,31 @@
 \DeclareMathSymbol{\leqslant}{\mathrel}{AMSa}{"36}
 \DeclareMathSymbol{\geqslant}{\mathrel}{AMSa}{"3E}
 
-\def\contentsname{Оглавление}
-\def\figurename{Рис.}
-\def\partname{Часть}
-%\def\listfigurename{Список рисунков}
-%\def\listtablename{Список таблиц}
-\def\refname{Литература}
-% Прямо здесь можно менять шрифт
-\def\bibname{Литература}
-%\def\indexname{Предметный указатель}
-\def\tablename{Таблица}
-%\def\abstractname{Аннотация}
-\@ifundefined{chapter}{}{\def\chaptername{Глава}}
-\def\proofname{Доказательство}
-\def\appendixname{Приложение}
-%\def\prefacename{Предисловие}
-\def\keywordsname{Ключевые слова}
+\def\contentsname{РћРіР»Р°РІР»РµРЅРёРµ}
+\def\figurename{Р РёСЃ.}
+\def\partname{Р§Р°СЃС‚СЊ}
+%\def\listfigurename{Г‘ГЇГЁГ±Г®ГЄ Г°ГЁГ±ГіГ­ГЄГ®Гў}
+%\def\listtablename{Г‘ГЇГЁГ±Г®ГЄ ГІГ ГЎГ«ГЁГ¶}
+\def\refname{Р›РёС‚РµСЂР°С‚СѓСЂР°}
+% ГЏГ°ГїГ¬Г® Г§Г¤ГҐГ±Гј Г¬Г®Г¦Г­Г® Г¬ГҐГ­ГїГІГј ГёГ°ГЁГґГІ
+\def\bibname{Р›РёС‚РµСЂР°С‚СѓСЂР°}
+%\def\indexname{ГЏГ°ГҐГ¤Г¬ГҐГІГ­Г»Г© ГіГЄГ Г§Г ГІГҐГ«Гј}
+\def\tablename{РўР°Р±Р»РёС†Р°}
+%\def\abstractname{ГЂГ­Г­Г®ГІГ Г¶ГЁГї}
+\@ifundefined{chapter}{}{\def\chaptername{Р“Р»Р°РІР°}}
+\def\proofname{Р”РѕРєР°Р·Р°С‚РµР»СЊСЃС‚РІРѕ}
+\def\appendixname{РџСЂРёР»РѕР¶РµРЅРёРµ}
+%\def\prefacename{ГЏГ°ГҐГ¤ГЁГ±Г«Г®ГўГЁГҐ}
+\def\keywordsname{РљР»СЋС‡РµРІС‹Рµ СЃР»РѕРІР°}
 
 
 %\if@textyo
-%\DeclareTextComposite{\"}{OT1}{е}{`\ё}
-%\DeclareTextComposite{\"}{OT1}{Е}{`\Ё}
+%\DeclareTextComposite{\"}{OT1}{ГҐ}{`\Вё}
+%\DeclareTextComposite{\"}{OT1}{Г…}{`\ВЁ}
 %\fi
 
 %
-% Подписи к картинкам
+% РџРѕРґРїРёСЃРё Рє РєР°СЂС‚РёРЅРєР°Рј
 %
 
 \def\@captionheadfont{\rmfamily}
@@ -504,7 +504,7 @@
   \@esphack}
 \def\nocontents{\gdef\mycontentslabel{\relax}}
 
-% Кавычки-елочки
+% РљР°РІС‹С‡РєРё-РµР»РѕС‡РєРё
 \chardef\llq=128
 \chardef\rrq=129
 
@@ -512,7 +512,7 @@
 
 %%%%%%%%%%%%%
 %
-% С указателем разберемся потом, если он кому-нибудь нужен
+% РЎ СѓРєР°Р·Р°С‚РµР»РµРј СЂР°Р·Р±РµСЂРµРјСЃСЏ РїРѕС‚РѕРј, РµСЃР»Рё РѕРЅ РєРѕРјСѓ-РЅРёР±СѓРґСЊ РЅСѓР¶РµРЅ
 %
 
 \def\ukazatel{%
@@ -522,21 +522,21 @@
 \rightskip=\ips
 \parindent=0pt
 \parfillskip=-\ips
-% Команда, рисующая полужирным шрифтом авторов, обычным название, дальше
-% \dotfill, затем номер журнала и страницы
+% РљРѕРјР°РЅРґР°, СЂРёСЃСѓСЋС‰Р°СЏ РїРѕР»СѓР¶РёСЂРЅС‹Рј С€СЂРёС„С‚РѕРј Р°РІС‚РѕСЂРѕРІ, РѕР±С‹С‡РЅС‹Рј РЅР°Р·РІР°РЅРёРµ, РґР°Р»СЊС€Рµ
+% \dotfill, Р·Р°С‚РµРј РЅРѕРјРµСЂ Р¶СѓСЂРЅР°Р»Р° Рё СЃС‚СЂР°РЅРёС†С‹
 \gdef\CONT##1##2##3##4{\hangindent=8mm{\bfseries\ignorespaces##1\unskip}
  {\mdseries\quad\ignorespaces##2\unskip}
  \dotfill\hbox to \ips{\hfil\itshape\ignorespaces##3\unskip\upshape,
   \hbox to \ps{\hfil\ignorespaces##4\unskip}}\par}
-% упрощенная версия для ссылки типа
-% Иванов И. И., см. Иванов И. И., Петров П. П.
+% СѓРїСЂРѕС‰РµРЅРЅР°СЏ РІРµСЂСЃРёСЏ РґР»СЏ СЃСЃС‹Р»РєРё С‚РёРїР°
+% РРІР°РЅРѕРІ Р. Р., СЃРј. РРІР°РЅРѕРІ Р. Р., РџРµС‚СЂРѕРІ Рџ. Рџ.
 \gdef\SCONT##1##2##3##4##5{\hangindent=8mm{\bfseries\ignorespaces##1,\unskip}
- {\mdseries\quad\ignorespaces см.~##2\unskip}
+ {\mdseries\quad\ignorespaces Г±Г¬.~##2\unskip}
  \dotfill\hbox to \ips{\hfil\itshape\ignorespaces##4\unskip\upshape,
   \hbox to \ps{\hfil\ignorespaces##5\unskip}}\par}
 %
-% Для ежегодного указателя все генерируется само, поэтому в начале 
-% документа нужно много всего добавить
+% Р”Р»СЏ РµР¶РµРіРѕРґРЅРѕРіРѕ СѓРєР°Р·Р°С‚РµР»СЏ РІСЃРµ РіРµРЅРµСЂРёСЂСѓРµС‚СЃСЏ СЃР°РјРѕ, РїРѕСЌС‚РѕРјСѓ РІ РЅР°С‡Р°Р»Рµ 
+% РґРѕРєСѓРјРµРЅС‚Р° РЅСѓР¶РЅРѕ РјРЅРѕРіРѕ РІСЃРµРіРѕ РґРѕР±Р°РІРёС‚СЊ
 %
 \AtBeginDocument{%
   \def\@serieslogo{%
@@ -550,11 +550,11 @@
     }%
   }%
 \nocontents
-\title[Именной указатель]%
-{Именной указатель журнала \\ \llq Алгебра и анализ\rrq \\ 
-$\text{т.~\origvolume, \origyear~г.}$}
+\title[РРјРµРЅРЅРѕР№ СѓРєР°Р·Р°С‚РµР»СЊ]%
+{РРјРµРЅРЅРѕР№ СѓРєР°Р·Р°С‚РµР»СЊ Р¶СѓСЂРЅР°Р»Р° \\ \llq РђР»РіРµР±СЂР° Рё Р°РЅР°Р»РёР·\rrq \\ 
+$\text{ГІ.~\origvolume, \origyear~ГЈ.}$}
 \maketitle
-\vbox to-1pc{\rightline{\upshape\No\hbox to\ps{\hfil с.}}\vss}
+\vbox to-1pc{\rightline{\upshape\No\hbox to\ps{\hfil СЃ.}}\vss}
 }
 }
 
